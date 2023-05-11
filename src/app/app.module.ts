@@ -15,6 +15,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { HomeComponent } from './paginas/home/home.component';
 import { VentaComponent } from './paginas/venta/venta.component';
 import { DetalleComponent } from './componente/detalle/detalle.component';
+import { HotelComponent } from './paginas/hotel/hotel.component';
+import { PrimengModule } from './modules/primeng/primeng.module';
 
 @NgModule(
   {
@@ -24,6 +26,7 @@ import { DetalleComponent } from './componente/detalle/detalle.component';
       HomeComponent,
       VentaComponent,
       DetalleComponent,
+      HotelComponent,
     ], 
     imports: [
       BrowserModule,
@@ -32,7 +35,8 @@ import { DetalleComponent } from './componente/detalle/detalle.component';
       AppRoutingModule,
       ButtonModule,
       CardModule,
-      MenubarModule
+      MenubarModule,
+      PrimengModule
     ],
     providers: [],
     bootstrap: [AppComponent]

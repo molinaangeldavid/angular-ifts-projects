@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <p>
+        Desarrollar la creacion de hoteles <code>(Clase hotel)</code> con sus habitaciones
+        <code>(Clase Habitacion)</code>, para luego poder visualizar un hotel y reservar las habitaciones y calcular su
+        facturacion total
+    </p>
+    <div class="row">
+        <div class="col-12">
+            <p-panel header="Registrar Hotel" [toggleable]="true">
+                <div class="row">
+                    <div class="col-2 span_container">
+                        <span>Nombre: </span>
+                    </div>
+                    <div class="col-2">
+                        <input type="text" pInputText [(ngModel)]="registroHotel.nombre" />
+                    </div>
+                    <div class="col-2 span_container">
+                        <span>Lugar: </span>
+                    </div>
+                    <div class="col-2">
+                        <input type="text" pInputText [(ngModel)]="registroHotel.lugar" />
+                    </div>
+                    <div class="col-2 span_container">
+                        <span>Habitaciones Simples: </span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="input_habitacion" pInputText [(ngModel)]="registroHotel.hab1" />
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-2 span_container">
+                        <span>Dobles: </span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="input_habitacion" pInputText [(ngModel)]="registroHotel.hab2" />
+                    </div>
+                    <div class="col-2 span_container">
+                        <span>Triples: </span>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="input_habitacion" pInputText [(ngModel)]="registroHotel.hab3" />
+                    </div>
+                    <div class="col-4 span_container">
+                        <p-button label="Crear" icon="pi pi-check" iconPos="right"></p-button>
+                    </div>
+                </div>
+            </p-panel>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-12">
+            <p-panel header="Registrar Habitacion" [toggleable]="true">
+                <div class="row">
+                    <div class="col-2 span_container">
+                        <span>Nombre: </span>
+                    </div>
+                    <div class="col-3">
+                        <p-dropdown [options]="hoteles" [(ngModel)]="selectedHotel" optionLabel="nombre"></p-dropdown>
+                    </div>
+                    <div class="col-4 span_container" *ngIf="selectedHotel">
+                        Capacidad restante: {{selectedHotel.capacidad}}
+                    </div>
+                    <div class="col-2 span_container" *ngIf="selectedHotel">
+                        Facturacion total: {{selectedHotel.facturacion | currency}}
+                    </div>
+                    
+                    <!-- MOSTRAR HABITACIONES Y  GENERAR LOGICA PARA PODER RESERVARLAS -->
+                </div>
+            </p-panel>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-12">
+            <p-panel header="Facturacion total" [toggleable]="true">
+                <!-- MODIFICAR LOS NUMEROS HARDCODEADOS POR LOS NUMEROS REALES-->
+                <div class="row">
+                    <div class="col-2">
+                        Hoteles Registrados: 5
+                    </div>
+                    <div class="col-2">
+                        Habitaciones Registradas: 30
+                    </div>
+                    <div class="col-2">
+                        Lugares disponibles total: 350
+                    </div>
+                    <div class="col-2">
+                        Facturacion total: $ 1500000
+                    </div>
+                </div>
+            </p-panel>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.input_habitacion {
+    width: 5rem;
+}
+
+.span_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ocupado {
+    background-color: red;
+    color: white;
+}
+
+.libre {
+    background-color: green;
+    color: white;
+}
