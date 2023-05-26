@@ -17,6 +17,10 @@ import { VentaComponent } from './paginas/venta/venta.component';
 import { DetalleComponent } from './componente/detalle/detalle.component';
 import { HotelComponent } from './paginas/hotel/hotel.component';
 import { PrimengModule } from './modules/primeng/primeng.module';
+import { NavComponent } from './componente/nav/nav.component';
+import { VentasRealizadasComponent } from './componente/ventas-realizadas/ventas-realizadas.component';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule(
   {
@@ -27,6 +31,8 @@ import { PrimengModule } from './modules/primeng/primeng.module';
       VentaComponent,
       DetalleComponent,
       HotelComponent,
+      NavComponent,
+      VentasRealizadasComponent,
     ], 
     imports: [
       BrowserModule,
@@ -36,7 +42,9 @@ import { PrimengModule } from './modules/primeng/primeng.module';
       ButtonModule,
       CardModule,
       MenubarModule,
-      PrimengModule
+      PrimengModule,
+      DynamicDialogModule,
+      DialogModule
     ],
     providers: [],
     bootstrap: [AppComponent]

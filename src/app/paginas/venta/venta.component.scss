@@ -1,0 +1,24 @@
+.table-content{
+    margin: auto;
+    border: 2px solid #000;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+th,td{
+    text-align: center;
+    padding: 20px 0;
+}
+th:first-child,td:first-child{
+    border-right: 1px solid #000;
+}
+th:last-child,td:last-child{
+    border-left: 1px solid #000;
+}
+tr{
+    border-bottom: 1px solid #000;
+}
+img{
+    width: 20%;
+    object-fit: cover;
+}

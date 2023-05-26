@@ -1,0 +1,28 @@
+ul{
+    background-color: rgba(173, 41, 29, 0.894); 
+    margin-bottom: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}
+li{
+    list-style: none;
+    padding:20px;
+    cursor: pointer;
+    background: linear-gradient(#312);
+}
+li a{
+    color: rgb(234, 234, 234);
+    text-decoration: none;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+li a:hover{
+    color: rgb(50, 85, 73);
+}
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}

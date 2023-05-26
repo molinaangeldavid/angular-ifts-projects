@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./detalle.component.scss']
 })
 export class DetalleComponent {
+
+  @Input() vehiculo: any;
+  router: Router;
+
+  venderauto(): void{
+    this.router.navigate(['detalles'])
+  }
+
+  visible: boolean;
+
+  showDialog() {
+    this.visible = true;
+  }
 
 }

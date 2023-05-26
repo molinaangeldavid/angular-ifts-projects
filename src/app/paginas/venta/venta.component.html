@@ -1,1 +1,34 @@
-<p>venta works!</p>
+<app-nav></app-nav>
+<table class="table-content">
+    <thead>
+      <tr>
+        <th scope="col">Imagen</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Usado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <td><img src={{vehiculo.imagen}} alt="" srcset=""></td>
+        <td class="align-items-center">{{vehiculo.marca}}</td>
+        <td>{{vehiculo.modelo}}</td>
+        <td>{{vehiculo.precio}}</td>
+        <td>{{vehiculo.usado}}</td>
+        <td>
+        <button class="btn btn-primary me-2" (click)="mostrarDetalle(vehiculo)">
+            Mostrar
+        </button>
+        <button class="btn btn-danger" (click)="borrarVehiculo(vehiculo)">
+            Eliminar
+        </button>
+    </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+      <app-detalle [vehiculo]="vehiculoElegido" *ngIf="vehiculoElegido"></app-detalle>
+  </div>
+
