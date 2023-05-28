@@ -12,23 +12,32 @@
     </thead>
     <tbody>
       <tr *ngFor="let vehiculo of vehiculos">
-        <td><img src={{vehiculo.imagen}} alt="" srcset=""></td>
-        <td class="align-items-center">{{vehiculo.marca}}</td>
+        <td class="col-4"><img src={{vehiculo.imagen}} alt=""></td>
+        <td>{{vehiculo.marca}}</td>
         <td>{{vehiculo.modelo}}</td>
-        <td>{{vehiculo.precio}}</td>
-        <td>{{vehiculo.usado}}</td>
-        <td>
-        <button class="btn btn-primary me-2" (click)="mostrarDetalle(vehiculo)">
-            Mostrar
-        </button>
-        <button class="btn btn-danger" (click)="borrarVehiculo(vehiculo)">
+        <td><strong>{{vehiculo.precio | currency}}</strong></td>
+        <td>{{vehiculo.usado | uppercase}}</td>
+        <td class="button-acciones">
+          <button (click)="showDialog(vehiculo)"  class="btn btn-primary" icon="pi pi-external-link">Mostrar</button>
+          <button class="btn btn-warning" (click)="venderVehiculo(vehiculo)" (click)="scroll(card)">
+            Vender
+          </button>
+          <button class="btn btn-danger" (click)="borrarVehiculo(vehiculo)">
             Eliminar
-        </button>
-    </td>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
-  <div>
-      <app-detalle [vehiculo]="vehiculoElegido" *ngIf="vehiculoElegido"></app-detalle>
+  <div #card>
+      <app-ventas-realizadas 
+      [vehiculosVendidosLista]="vehiculosVendidos" 
+      [cantidad] = "cantidadVendidos" 
+      [presupuesto]="totalFacturado"></app-ventas-realizadas>
   </div>
+  <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div>
+      <app-detalle [vehiculo]="vehiculoMostrar" (cerrar)="estadoInput($event)"></app-detalle>
+    </div>
+  </p-dialog>
 

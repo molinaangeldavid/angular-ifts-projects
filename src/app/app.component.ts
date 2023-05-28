@@ -8,6 +8,7 @@ import { MenuItem } from 'primeng/api';
 })
 
 export class AppComponent implements OnInit {
+  title = "autos";
   nombre: string = "";
   edad: number = 0;
   texto: string = '';

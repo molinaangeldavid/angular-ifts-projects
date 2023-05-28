@@ -21,6 +21,7 @@ import { NavComponent } from './componente/nav/nav.component';
 import { VentasRealizadasComponent } from './componente/ventas-realizadas/ventas-realizadas.component';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
+import { ModeloMasVendidoPipe } from './pipes/modelo-mas-vendido.pipe';
 
 @NgModule(
   {
@@ -33,6 +34,7 @@ import { DialogModule } from 'primeng/dialog';
       HotelComponent,
       NavComponent,
       VentasRealizadasComponent,
+      ModeloMasVendidoPipe
     ], 
     imports: [
       BrowserModule,

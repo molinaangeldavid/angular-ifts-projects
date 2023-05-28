@@ -1,19 +1,28 @@
-<table>
+<table *ngIf="vehiculosVendidosLista.length > 0">
     <thead>
         <tr>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Precio</th>
+            <th class="col-2">Marca</th>
+            <th class="col-2">Modelo</th>
+            <th class="col-2">Precio</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
+        <tr *ngFor="let v of vehiculosVendidosLista">
+            <td>{{v.marca}}</td>
+            <td>{{v.modelo}}</td>
+            <td>{{v.precio | currency}}</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            
+            <th>Marca mas vendida</th>
+            <th>Unidades vendidas</th>
+            <th>Total Facturado</th>
+        </tr>
+        <tr>
+            <td>{{vehiculosVendidosLista | modeloMasVendido}}</td>
+            <td>{{cantidad}}</td>
+            <td>{{presupuesto | currency}}</td>
         </tr>
     </tfoot>
 </table>

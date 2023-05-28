@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,EventEmitter,Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,17 +8,10 @@ import { Router } from '@angular/router';
 })
 export class DetalleComponent {
 
-  @Input() vehiculo: any;
-  router: Router;
+  @Input() vehiculo: any | undefined;
+  @Output() cerrar = new EventEmitter<boolean>();
 
-  venderauto(): void{
-    this.router.navigate(['detalles'])
+  cerrarDialog(){
+    this.cerrar.emit(false)
   }
-
-  visible: boolean;
-
-  showDialog() {
-    this.visible = true;
-  }
-
 }

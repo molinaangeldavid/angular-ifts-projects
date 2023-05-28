@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Vehiculo } from 'src/app/vehiculo';
 
 
@@ -9,16 +9,23 @@ import { Vehiculo } from 'src/app/vehiculo';
 })
 export class VentasRealizadasComponent implements OnInit{
   
-  
-  vehiculosVendidosLista: Vehiculo[] = [];
+  @Input() vehiculosVendidosLista: any[]; 
+  @Input() cantidad: any
+  @Input() presupuesto: any;
+
   ngOnInit(): void {
-    
   }
 
-  @Input() vehiculoVendido: Vehiculo;
-  vehiculo: any;
-
+  total: any;
   
+  totalFacturado(): any{
+    let total = 0;
+    for (let index = 0; index < this.vehiculosVendidosLista.length; index++) {
+      const element = this.vehiculosVendidosLista[index];
+      total += element.precio;
+    }
+    return total
+  }
 
 
 
